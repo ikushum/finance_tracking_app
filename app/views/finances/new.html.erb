@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+
+<%= simple_form_for Finance.new do |f| %>
+  <%= f.input :title %>
+  <%= f.input :amount %>
+  <%= f.input :created_at, :label => "Date" %>
+  <%= f.submit 'Submit' %>
+<% end %>

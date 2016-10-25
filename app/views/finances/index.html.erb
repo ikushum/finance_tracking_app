@@ -12,11 +12,13 @@
     <th>Title</th>
     <th>Amount</th>
   </tr>
+  <% @records.each do |record| %>
     <tr>
-    <td>2016-09-22</td>
-    <td>Ham Burger</td>
-    <td>150</td>
-    <td> <a style="font-size:15px" class = 'btn btn-sm btn-warning'> Edit </a> </td>
-    <td> <a style="font-size:15px" class = 'btn btn-sm btn-danger'> Delete </a>
+        <td><%= record.created_at %></td>
+        <td><%= record.title %></td>
+        <td><%= record.amount %></td>
+    <td> <%= link_to 'Edit', edit_finance_path(record), class: 'btn btn-sm btn-warning', style: 'font-size:15px' %> </td>
+    <td> <%= link_to 'Delete', finance_path(record), method: :delete, class: 'btn btn-sm btn-danger', style: 'font-size:15px', data: {confirm: "Are you sure?"} %> </td>
   </tr>
+  <% end %>
 </table>
