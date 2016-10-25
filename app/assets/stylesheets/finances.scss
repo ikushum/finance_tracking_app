@@ -40,11 +40,13 @@ a:hover{
 }
 
 #result{
-    margin-top:50px;
+    width:100%;
+    margin:50px 0px;
 }
 
 h3.result{
     font-size:30px;
+    text-align:center;
 }
 
 table{
@@ -62,6 +64,14 @@ th{
 td{
     padding:10px; 
     border-top:1px solid #e3e3e3;
+}
+
+#form{
+    margin-top:30px;
+}
+
+h2{
+    text-align:center;
 }
 
 #footer{

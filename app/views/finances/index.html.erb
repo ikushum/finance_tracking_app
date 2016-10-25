@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 
+<% balance=0 %>
+<% debt=0 %>
+<% total=0 %> 
+
+<% @records.each do |record| %>
+<% if record.amount >= 0 %>
+<% balance+=record.amount %>
+<% elsif record.amount < 0 %>
+<% debt+=record.amount %>
+<% end %>
+<% total=balance+debt %>
+<%end%>
+
 <div id="result">
-    <h3 class="result"> Balance : XXX </h3>
-    <h3 class="result"> Debt : XXX </h3>
-    <h3 class="result"> Total : XXX </h3>
+    <h3 class="result"> Balance : <%= balance %> </h3>
+    <h3 class="result"> Debt : <%= debt %> </h3>
+    <h3 class="result"> Total : <%= total %> </h3>
 </div>
 
 <table>

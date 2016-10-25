@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 
+<h2> All New Record </h2>
+<div id ="form">
 <%= simple_form_for Finance.new do |f| %>
   <%= f.input :title %>
   <%= f.input :amount %>
   <%= f.input :created_at, :label => "Date" %>
   <%= f.submit 'Submit' %>
 <% end %>
+</div>

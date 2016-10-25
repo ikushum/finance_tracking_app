@@ -7,8 +7,13 @@ class FinancesController < ApplicationController
     end
     
     def create
-        @records=Finance.create(finance_params)
-        redirect_to root_path
+        @record=Finance.create(finance_params)
+        if @record.valid?
+            flash[:success] = "New record has been added!"
+            redirect_to root_path
+        else
+            redirect_to new_finance_path
+        end
     end
     
     def edit
@@ -16,14 +21,20 @@ class FinancesController < ApplicationController
     end
     
     def update
-        @records = Finance.find(params[:id])
-        @records.update(finance_params)
-        redirect_to root_path
+        @record = Finance.find(params[:id])
+        
+        if @record.update(finance_params)
+            flash[:success] = "The record has been edited!"
+            redirect_to root_path
+        else
+            redirect_to edit_finance_path
+        end
     end
     
     def destroy
         @records=Finance.find(params[:id])
         @records.destroy
+        flash[:success] = "The record has been deleted!"
         redirect_to root_path
     end
     
