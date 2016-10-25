@@ -1,0 +1,1 @@
+A simple Finance tracking application
