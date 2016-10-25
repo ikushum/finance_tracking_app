@@ -1,6 +1,9 @@
 class FinancesController < ApplicationController
-    def index
+      def index
         @records=Finance.all
+        @balance=Finance.balance
+        @debt=Finance.debt
+        @total=Finance.total
     end
     
     def new
